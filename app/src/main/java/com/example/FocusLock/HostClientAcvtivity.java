@@ -5,12 +5,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+        import androidx.annotation.Nullable;
+        import androidx.appcompat.app.AppCompatActivity;
+        import android.content.Intent;
+        import android.os.Bundle;
+        import android.view.View;
+        import android.widget.Button;
 
-import com.example.FocusLock.R;
+        import androidx.annotation.Nullable;
+        import androidx.appcompat.app.AppCompatActivity;
 
-public class HostActivity extends AppCompatActivity {
+        import com.example.FocusLock.R;
+
+public class HostClientAcvtivity extends AppCompatActivity {
     private Button host,join;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -21,7 +28,7 @@ public class HostActivity extends AppCompatActivity {
         host.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(HostActivity.this,HostPageActivity.class));            }
+                startActivity(new Intent(HostClientAcvtivity.this,HostPageActivity.class));            }
         });
     }
 }
