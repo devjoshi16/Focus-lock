@@ -9,12 +9,13 @@
 <!--    android:background="@drawable/bb"-->
 
     <Button
-        android:id="@+id/btnjoin"
+        android:id="@+id/btnhost"
         android:layout_width="288dp"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_bg"
         android:text="Host"
-        app:layout_constraintBottom_toTopOf="@+id/btnhost"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintBottom_toTopOf="@+id/btnjoin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,12 +23,13 @@
         app:layout_constraintVertical_bias="0.846" />
 
     <Button
-        android:id="@+id/btnhost"
+        android:id="@+id/btnjoin"
         android:layout_width="288dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="228dp"
         android:background="@drawable/btn_bg"
         android:text="Join"
+        android:textColor="@color/colorBlack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"

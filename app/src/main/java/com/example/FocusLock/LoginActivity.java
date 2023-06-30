@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +27,8 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private EditText loginEmail,loginPassword;
     private Button loginButton;
+    private ImageButton imgbtn_eye;
+
     private  TextView signUpRedirectText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +39,8 @@ public class LoginActivity extends AppCompatActivity {
         loginEmail= findViewById(R.id.inputEmail);
         loginPassword=findViewById(R.id.inputPassword);
         loginButton=findViewById(R.id.btnlogin);
+        imgbtn_eye=findViewById(R.id.eyebtn);
+
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +73,26 @@ public class LoginActivity extends AppCompatActivity {
                     loginEmail.setError("Email cannot be empty");
                 }else{
                     loginEmail.setError("please enter valid email");
+                }
+            }
+        });
+
+        imgbtn_eye.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(view.getId()==R.id.eyebtn){
+
+                    if(loginPassword.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())){
+//                          ((ImageView(view)).setImageResource(R.drawable.hide_password);
+                        //Show Password
+                        loginPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    }
+                    else{
+//                          ((ImageView)(view)).setImageResource(R.drawable.show_password);
+                        //Hide Password
+                        loginPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    }
                 }
             }
         });

@@ -1,5 +1,6 @@
 package com.example.FocusLock;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,11 +19,9 @@ public class HostActivity extends AppCompatActivity {
         host=findViewById(R.id.btnhost);
         join=findViewById(R.id.btnjoin);
         host.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
-
-            }
+                startActivity(new Intent(HostActivity.this,HostPageActivity.class));            }
         });
     }
 }
